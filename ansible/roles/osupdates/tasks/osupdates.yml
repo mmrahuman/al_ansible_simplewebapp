@@ -1,0 +1,13 @@
+- name: Add vagrant user to sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^vagrant\s'
+    line: '%vagrant ALL=(ALL) NOPASSWD: ALL'
+
+- name: Add admin group to sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^admin\s'
+    line: '%admin ALL=(ALL) NOPASSWD: ALL'

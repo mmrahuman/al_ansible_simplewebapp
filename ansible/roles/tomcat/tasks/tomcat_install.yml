@@ -1,0 +1,19 @@
+---
+- name: Run System Update
+  shell: sudo apt-get update
+
+- name: Install Tomcat7
+  shell: sudo apt-get -y install tomcat7
+
+- name: copy mysql jar to tomcat
+  copy:
+    src: files/mysql-connector-java-5.1.46.jar
+    dest: /usr/share/tomcat7/lib
+
+- name: copy war file to tomcat
+  copy:
+    src: /home/vagrant/al_ansible_simplewebapp/javaapp/javaapp.war
+    dest: /var/lib/tomcat7/webapps/
+
+- name: restart tomcat
+  command: sudo service tomcat7 restart

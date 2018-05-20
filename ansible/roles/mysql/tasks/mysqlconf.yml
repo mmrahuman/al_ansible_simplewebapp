@@ -1,0 +1,10 @@
+- name: Copy mysql conf to allow inbound conn.
+  copy:
+    src: files/my.cnf
+    dest: /etc/mysql
+
+- name: Stop MySQL 
+  command: sudo /etc/init.d/mysql stop
+
+- name: Start MySQL
+  command: sudo /etc/init.d/mysql start

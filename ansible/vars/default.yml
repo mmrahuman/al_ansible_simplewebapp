@@ -1,0 +1,13 @@
+grps:
+  - name: vagrant
+    sudo: true
+  - name: admin
+    sudo: true
+
+mysqluser: root
+mysqlpass: root
+dbhost: mysqldb
+dbport: 3306
+dbname: alswdb
+dbuser: aladmin
+dbpass: adm1n

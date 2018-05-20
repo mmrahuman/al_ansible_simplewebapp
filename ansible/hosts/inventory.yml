@@ -1,0 +1,9 @@
+[localhost]
+127.0.0.1  ansible_connection=local
+
+[appServers]
+appSvr1 
+appSvr2
+
+[mysql]
+mysqldb

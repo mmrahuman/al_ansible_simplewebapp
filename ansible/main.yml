@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - { role: nginx }
+
+- hosts: localhost
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - { role: osupdates }
+
+- hosts: appServers
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - { role: tomcat }
+
+- hosts: mysql
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - { role: mysql }
+
+

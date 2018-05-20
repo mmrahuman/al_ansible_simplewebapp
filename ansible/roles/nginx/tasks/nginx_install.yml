@@ -1,0 +1,16 @@
+- name: Install NGINx 
+  apt: name=nginx state=latest
+  register: nginx_installed
+
+- name: Update nginx configuration file
+  copy: src=nginx.conf
+        dest=/etc/nginx/
+
+- name: Copy nginx lb file
+  copy: src=load-balancer.conf
+        dest=/etc/nginx/conf.d
+         
+- name: Restart nginx
+  service:
+     name: nginx
+     state: restarted
